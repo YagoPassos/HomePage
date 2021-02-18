@@ -7,7 +7,7 @@ const Page: React.FC = () => {
   return (
     <Container>
       <ModelsWrapper>
-        <div>
+        {/* <div> */}
           {[
             'Model One',
             'Model Two',
@@ -30,7 +30,7 @@ const Page: React.FC = () => {
             />
           ))}
 
-        </div>
+        {/* </div> */}
       </ModelsWrapper>
     </Container>
   );

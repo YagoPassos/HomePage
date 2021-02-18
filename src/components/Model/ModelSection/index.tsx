@@ -10,7 +10,7 @@ interface Props extends React.HtmlHTMLAttributes<HTMLDivElement>{
 const ModelSection: React.FC<Props> = ({modelName, overlayNode, children, ...props}) => {
   return (
     <Container {...props}>
-      {children}
+      {/* {children} */}
     </Container>
   );
 };
