@@ -3,11 +3,13 @@ import React, { useState, useCallback, useRef } from 'react';
 import { Container, OverlaysRoot, ModelOverlay } from './styles';
 import ModelsContext, { CarModel } from '../ModelsContext';
 
-const ModelsWrapper: React.FC = ({children}) => {
+const ModelsWrapper: React.FC = ({ children }) => {
   const wrapperRef = useRef<HTMLDivElement>(null)
+
   const [registeredModels, setRegisteredModels] = useState<CarModel[]>([])
-  const registerModel = useCallback( (model: CarModel)=> {
-    setRegisteredModels(state => [...state, model])
+
+  const registerModel = useCallback((model: CarModel) => {
+    setRegisteredModels(state => [...state, { ...model }])
   }, [])
 
   const unregisterModel = useCallback((modelName: String) => {
@@ -15,29 +17,32 @@ const ModelsWrapper: React.FC = ({children}) => {
   }, [])
 
   const getModelByName = useCallback
-  ((modelName: string) => {
-    return registeredModels.find( item => item.modelName === modelName) || null
-  }, [registeredModels])
+    ((modelName: string) => {
+      return registeredModels.find(item => item.modelName === modelName) || null
+    }, [registeredModels])
 
   return (
-   <ModelsContext.Provider value={{
-     wrapperRef,
-     registeredModels,
-     registerModel,
-     unregisterModel,
-     getModelByName
-   }}>
+    <ModelsContext.Provider
+      value={{
+        wrapperRef,
+        registeredModels,
+        registerModel,
+        unregisterModel,
+        getModelByName
+      }}
+    >
       <Container ref={wrapperRef}>
-       <OverlaysRoot>
-         {registeredModels.map( item => (
-           <ModelOverlay key={item.modelName}>
-             {console.log(item)}
-           </ModelOverlay>
-         ))}
-         </OverlaysRoot> 
-      {children}
-    </Container>
-   </ModelsContext.Provider>
+        <OverlaysRoot>
+          {registeredModels.map(item => (
+            <ModelOverlay key={item.modelName}>
+              {item.overlayNode}
+              ${console.log(item)}
+            </ModelOverlay>
+          ))}
+        </OverlaysRoot>
+        {children}
+      </Container>
+    </ModelsContext.Provider>
   );
 };
 
