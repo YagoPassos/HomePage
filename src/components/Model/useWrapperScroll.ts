@@ -8,14 +8,14 @@ export default function useWrapperScroll() {
   const scrollY = useMotionValue(0)
   const scrollYProgress = useMotionValue(0)
 
-  useEffect(() => {
-    scrollY.onChange(scrollY => {
-      console.log({scrollY})
-    })
-    scrollYProgress.onChange(scrollYProgress => {
-      console.log({scrollYProgress})
-    })
-  },[scrollY, scrollYProgress])
+  // useEffect(() => {
+  //   scrollY.onChange(scrollY => {
+  //     console.log({scrollY})
+  //   })
+  //   scrollYProgress.onChange(scrollYProgress => {
+  //     console.log({scrollYProgress})
+  //   })
+  // },[scrollY, scrollYProgress])
 
   useEffect(() => {
     const element = wrapperRef.current
