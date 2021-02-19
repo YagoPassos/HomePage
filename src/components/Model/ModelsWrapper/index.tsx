@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react';
-
-import { Container, OverlaysRoot, ModelOverlay } from './styles';
+import ModelOverlay from '../ModelOverlay'
+import { Container, OverlaysRoot } from './styles';
 import ModelsContext, { CarModel } from '../ModelsContext';
 
 const ModelsWrapper: React.FC = ({ children }) => {
@@ -36,7 +36,6 @@ const ModelsWrapper: React.FC = ({ children }) => {
           {registeredModels.map(item => (
             <ModelOverlay key={item.modelName}>
               {item.overlayNode}
-              ${console.log(item)}
             </ModelOverlay>
           ))}
         </OverlaysRoot>

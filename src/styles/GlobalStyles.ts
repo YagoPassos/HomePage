@@ -13,8 +13,8 @@ export const GlobalStyles = createGlobalStyle`
 
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
-} */
+}
 
 `
