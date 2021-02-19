@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 
 export interface CarModel {
     modelName: string
-    overlarNode: ReactNode
+    overlayNode: ReactNode
     sectionRef: React.RefObject<HTMLElement> 
 }
 

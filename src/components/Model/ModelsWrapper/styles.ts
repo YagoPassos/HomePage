@@ -5,3 +5,8 @@ export const Container = styled.div`
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
 `;
+
+export const OverlaysRoot = styled.div``;
+
+export const ModelOverlay = styled.div``;
+
