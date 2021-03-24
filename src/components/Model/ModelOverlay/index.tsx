@@ -12,7 +12,7 @@ type SectionDimensions = Pick<HTMLDivElement, 'offsetTop' | 'offsetHeight'>
 const ModelOverlay: React.FC<Props> = ({ model, children}) => {
   const { scrollY }  = useWrapperScroll()
 
-  const getSection =
+  // const getSection =
 
   return (
     <Container>
